@@ -18,7 +18,7 @@ public class CharacterAiming : MonoBehaviour
         cam = Camera.main;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        weapon = GetComponentInChildren<raycastWeapon>();
+        
     }
 
 
@@ -31,19 +31,12 @@ public class CharacterAiming : MonoBehaviour
     {
         if (Input.GetButton("Fire2"))
         {
-            aimLayer.weight += Time.deltaTime / aimDuration;
-        }
-        else
-        {
-            aimLayer.weight -= Time.deltaTime / aimDuration;
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            weapon.StartFiring();
-        }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            weapon.StopFiring();
+            aimLayer.weight = 1.0f;
+            //    aimLayer.weight += Time.deltaTime / aimDuration;
+            //}
+            //else
+            //{
+            //    aimLayer.weight -= Time.deltaTime / aimDuration;
         }
     }
 

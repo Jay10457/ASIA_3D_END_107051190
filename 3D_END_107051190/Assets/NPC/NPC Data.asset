@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd827412fec16f43b3a69db8fa43335, type: 3}
+  m_Name: NPC Data
+  m_EditorClassIdentifier: 
+  textA: "\u4F60\u597D\uFF01\u671F\u672B\u6230\u58EB\uFF0C\u53C8\u5230\u4E86\u9019\u6642\u5019\u4E86\u5462\uFF0C\n\u770B\u4F86\u6211\u5011\u7684\u671F\u672B\u50AC\u72C2\u9B54-OO\u7378\u53C8\u51FA\u73FE\u4E86\uFF0C\u4F60\u53EF\u4EE5\u5E6B\u6211\u8A0E\u4F10\u4ED6\u5011\u55CE?
+    \n- \u6309\" F \"\u627F\u63A5-"
+  textB: "\u4F86\u7D66\u4F60\u4E00\u628A\u5C0D\u4ED8\u4ED6\u5011\u7684\u6B66\u5668\uFF0C\u5C31\u653E\u5728\u6211\u80CC\u5F8C\u7684\u7BB1\u5B50\u5F8C\u9762"
+  textC: "\u5E6B\u6211\u5B8C\u6210\u4EFB\u52D9\u5427"
+  count: 10
+  countCurrent: 0
