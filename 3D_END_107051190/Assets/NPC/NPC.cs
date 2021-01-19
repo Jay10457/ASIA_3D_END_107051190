@@ -19,6 +19,7 @@ public class NPC : MonoBehaviour
     
     bool IsDone;
     bool IsFPress;
+    bool InStay;
     
     public bool InArea;
     Animator NPC_anim;
@@ -30,7 +31,14 @@ public class NPC : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            IsFPress = true;
+            if ( InStay && IsDone)
+            {
+
+                StartCoroutine(Dialoug(2));
+                IsDone = false;
+
+
+            }
         }
         else
         {
@@ -74,14 +82,11 @@ public class NPC : MonoBehaviour
     {
         if (other.name == "Player")
         {
-            if (IsFPress && IsDone)
-            {
-
-                StartCoroutine(Dialoug(2));
-                IsDone = false;
-
-
-            }
+            InStay = true;
+        }
+        else
+        {
+            InStay = false;
         }
        
     }

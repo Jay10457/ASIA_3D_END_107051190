@@ -7,15 +7,24 @@ public class WeaponPick : MonoBehaviour
 {
     public raycastWeapon weaponPrefab;
     public GameObject pickUP;
+    public GameObject Player;
     bool isFPress = false;
     bool isEqip = false;
+    bool InArea;
     
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && InArea)
         {
-            isFPress = true;
+            ActiveWeapon activeWeapon = Player.GetComponent<ActiveWeapon>();
+            if (activeWeapon)
+            {
+                raycastWeapon newWeapon = Instantiate(weaponPrefab);
+                activeWeapon.Equip(newWeapon);
+            }
+            Destroy(gameObject);
+            isEqip = true;
         }
         else
         {
@@ -25,25 +34,10 @@ public class WeaponPick : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        
-        
-        if (isFPress )
-        {
-            ActiveWeapon activeWeapon = other.GetComponent<ActiveWeapon>();
-            if (activeWeapon)
-            {
-                raycastWeapon newWeapon = Instantiate(weaponPrefab);
-                activeWeapon.Equip(newWeapon);
-            }
-            Destroy(gameObject);
-            isEqip = true;
 
-        }
-        if (isEqip)
-        {
-            pickUP.SetActive(false);
-
-        }
+        InArea = true;
+       
+        
 
     }
     private void OnTriggerEnter(Collider other)
