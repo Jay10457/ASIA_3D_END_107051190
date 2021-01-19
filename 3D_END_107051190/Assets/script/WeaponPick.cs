@@ -25,6 +25,10 @@ public class WeaponPick : MonoBehaviour
             }
             Destroy(gameObject);
             isEqip = true;
+            if (isEqip)
+            {
+                pickUP.SetActive(false);
+            }
         }
         else
         {
